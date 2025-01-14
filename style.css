@@ -1,0 +1,118 @@
+/* open-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/open-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-family: "Causten";
+  src: url("./fonts/Causten-Regular.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/**** Common Style ****/
+
+:root {
+  --thin-black: #3c4242;
+  --purple: #8a33fd;
+  --large-gap: 30px;
+  --small-gap: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-height: 100vh;
+  font-family: "Causten";
+}
+
+h1 {
+  font-family: "Open sans";
+  font-size: 1.75rem;
+  font-size: clamp(
+    1.75rem,
+    1.6179577464788732rem + 0.5633802816901408vw,
+    2.125rem
+  );
+}
+
+p,
+label {
+  font-family: "Causten";
+  color: var(--thin-black);
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-text {
+  font-size: 1.125rem;
+  font-size: clamp(
+    1.125rem,
+    1.0369718309859155rem + 0.3755868544600939vw,
+    1.375rem
+  );
+}
+
+.large-pera {
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.9559859154929577rem + 0.18779342723004694vw,
+    1.125rem
+  );
+}
+
+.small-pera {
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.8309859154929577rem + 0.18779342723004694vw,
+    1rem
+  );
+}
+
+/**** Sign up ****/
+
+#sign-up {
+  display: grid;
+  grid-template-columns: 1fr min(100% - 40px) 1fr;
+  max-height: 100%;
+  margin-top: 60px;
+}
+
+.img-wrap {
+  display: none;
+}
+
+.content {
+  grid-column: 2 / -2;
+  display: grid;
+  row-gap: 30px;
+}
+
+.account-wrap{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.account-wrap .account{
+    border: 1px solid black;
+    padding-block-start: 0.875rem;
+    padding-block-end: 0.875rem;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
