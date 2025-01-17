@@ -116,3 +116,12 @@ a {
     align-items: center;
     column-gap: 10px;
 }
+
+/**** Form ****/
+
+form input{
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
