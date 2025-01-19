@@ -37,6 +37,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-family: "Open sans";
   font-size: 1.75rem;
@@ -63,7 +67,7 @@ h1 {
   );
 }
 
-.small text {
+.small-text {
   font-weight: 400;
   font-size: 0.875rem;
   font-size: clamp(
@@ -93,11 +97,124 @@ h1 {
   background-color: white;
   color: var(--purple);
   border: 1px solid var(--purple);
-  transition-duration: .4s;
+  transition-duration: 0.4s;
   transition-timing-function: ease ease-in-out;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr min(100% - 40px, 90em) 1fr;
+}
+
 /* Header */
+header {
+  padding-block: 20px;
+  border-bottom: 1px solid var(--thin-black);
+}
+
+.heading {
+  grid-column: 2/-2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading .search,
+nav {
+  display: none;
+}
+
+.show-hide-btn {
+  font-size: 1.5rem;
+}
+
+/* Section Sign up */
+
+#sign-up .content {
+  grid-column: 2/-2;
+  display: flex;
+  flex-flow: column;
+  row-gap: 30px;
+  padding-block-start: 40px;
+}
+
+.social-account {
+  display: flex;
+  flex-flow: column;
+  row-gap: 20px;
+}
+
+.account {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-family: "Causten";
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.8125rem + 0.625vw, 1.375rem);
+  font-weight: 500;
+}
+
+.or {
+  grid-column: 2/-2;
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.or span {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0px 10px;
+}
+.or::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #666666;
+  z-index: -2;
+  left: 0px;
+  top: 50%;
+}
+
+.or::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #666666;
+  z-index: -2;
+  right: 0px;
+  top: 50%;
+}
+
+.sign-up-img {
+  display: none;
+}
+
+/* Media Screen 800px */
+
+@media (width >= 50em) {
+  .heading {
+    padding-block: 25px;
+  }
+}
+
+/* Media Screen 1440px */
+
+@media (width >= 90em) {
+  .heading {
+    padding-block: 32px;
+  }
+}
 
 /* * {
   margin: 0;
